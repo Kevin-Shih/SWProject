@@ -10,11 +10,12 @@ class Flight(QtWidgets.QMainWindow):
         super(Flight, self).__init__()
 #        self.craw = crawler()
 #        self.driver = webdriver.Chrome(executable_path='C:\Code\VirusCrawler\venv\Lib\site-packages\selenium\webdriver\remote\chromedriver.exe')
-        json_file = json.loads(crawler())
+#        json_file = json.loads(crawler())
 #        json_file = open(self.craw, "r", encoding='utf-8')
-        self.FData = json.load(json_file, encoding='utf-8')
-        print(self.FData["1"][0])
-        json_file.close()
+#        self.FData = json.loads(json_file, encoding='utf-8')
+        self.FData = json.loads(crawler(), encoding='utf-8')
+#        print(self.FData["1"][0])
+#        json_file.close()
         self.ui = Ui_Flight()
         self.ui.setupUi(self)
         self.ui.flighttable.hide()
@@ -23,13 +24,13 @@ class Flight(QtWidgets.QMainWindow):
         self.ui.retranslateUi(Fl)
         _translate = QtCore.QCoreApplication.translate
         for i in range(100):
-            for j in range(8):
+            for j in range(7):
                 self.ui.item = QtWidgets.QTableWidgetItem()
                 self.ui.flighttable.setItem(i, j, self.ui.item)
-        for i in range(3):
-            for j in range(8):
+        for i in range(90):
+            for j in range(7):
                 self.ui.item = self.ui.flighttable.item(i, j)
-                self.ui.item.setText(_translate("Flight", self.FData[str(i)][j]))
+                self.ui.item.setText(_translate("Flight", self.FData["flight" + str(i)][j]))
 
         self.ui.flighttable.itemActivated.connect(itemActivated_event)
  #       self.ui.search.clicked.connect(self.handleButton)   #search button ( not completed
