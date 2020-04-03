@@ -27,7 +27,7 @@ class Flight(QtWidgets.QMainWindow):
             for j in range(7):
                 self.ui.item = QtWidgets.QTableWidgetItem()
                 self.ui.flighttable.setItem(i, j, self.ui.item)
-        for i in range(90):
+        for i in range(85):
             for j in range(7):
                 self.ui.item = self.ui.flighttable.item(i, j)
                 self.ui.item.setText(_translate("Flight", self.FData["flight" + str(i)][j]))

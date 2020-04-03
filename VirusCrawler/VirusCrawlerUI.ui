@@ -83,7 +83,7 @@
     <number>100</number>
    </property>
    <property name="columnCount">
-    <number>8</number>
+    <number>7</number>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>140</number>
@@ -200,6 +200,11 @@
    </column>
    <column>
     <property name="text">
+     <string>logo</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>航空公司</string>
     </property>
    </column>
@@ -215,17 +220,7 @@
    </column>
    <column>
     <property name="text">
-     <string>航廈</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
      <string>狀態</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>預計時間</string>
     </property>
    </column>
   </widget>

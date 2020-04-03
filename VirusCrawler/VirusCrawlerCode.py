@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #from __future__ import unicode_literals
 import bs4
 import time
@@ -68,4 +67,3 @@ def crawler():
     return flight_info_jason
 
 crawler()
-
