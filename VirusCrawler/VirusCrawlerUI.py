@@ -56,15 +56,17 @@ class Ui_Flight(object):
         self.reload.setGeometry(QtCore.QRect(180, 20, 93, 28))
         self.reload.setObjectName("reload")
         self.search = QtWidgets.QPushButton(Flight)
-        self.search.setGeometry(QtCore.QRect(330, 20, 93, 28))
+        self.search.setGeometry(QtCore.QRect(530, 20, 93, 28))
         self.search.setObjectName("search")
         self.textEdit = QtWidgets.QTextEdit(Flight)
-        self.textEdit.setGeometry(QtCore.QRect(470, 16, 211, 51))
+        self.textEdit.setGeometry(QtCore.QRect(360, 20, 151, 31))
         self.textEdit.setObjectName("textEdit")
 
         self.retranslateUi(Flight)
         self.main.clicked.connect(self.flighttable.hide)
         self.flightinfo.clicked.connect(self.flighttable.show)
+        self.flightinfo.clicked.connect(self.search.show)
+        self.flightinfo.clicked.connect(self.textEdit.show)
         QtCore.QMetaObject.connectSlotsByName(Flight)
 
     def retranslateUi(self, Flight):

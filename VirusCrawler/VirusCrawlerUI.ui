@@ -245,7 +245,7 @@
   <widget class="QPushButton" name="search">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>530</x>
      <y>20</y>
      <width>93</width>
      <height>28</height>
@@ -258,10 +258,10 @@
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>16</y>
-     <width>211</width>
-     <height>51</height>
+     <x>360</x>
+     <y>20</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
@@ -297,6 +297,38 @@
     <hint type="destinationlabel">
      <x>599</x>
      <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flightinfo</sender>
+   <signal>clicked()</signal>
+   <receiver>search</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>33</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flightinfo</sender>
+   <signal>clicked()</signal>
+   <receiver>textEdit</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>435</x>
+     <y>35</y>
     </hint>
    </hints>
   </connection>
