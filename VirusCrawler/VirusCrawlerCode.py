@@ -40,27 +40,27 @@ def crawler():
             airline_logos = raw_flight_table_infos[2].findAll("img")	#找logo的標籤
             airline_names = raw_flight_table_infos[2].findAll("span")	#找航空公司名稱
             flight_numbers = raw_flight_table_infos[3].findAll("span")	#找航班編號
-            temp += raw_flight_table_infos[0].get_text() + "," \                
-                + raw_flight_table_infos[1].get_text() + ","
+            temp += raw_flight_table_infos[0].get_text() + "','" \                
+                + raw_flight_table_infos[1].get_text() + "','"
             for airline_logo in airline_logos:
                 temp += "https://www.taoyuan-airport.com" + airline_logo['src'] + " "
             temp = temp.rstrip()
-            temp += ","
+            temp += "','"
             for airline_name in airline_names:
                 temp += airline_name.get_text() + " "	#拼成字串(每個欄位用','分隔，超過一個航空公司或航班編號時以' '分隔)
             temp = temp.rstrip()
-            temp += ","
+            temp += "','"
             for flight_number in flight_numbers:
                 temp += flight_number.get_text() + " "
             temp = temp.rstrip()
-            temp += ","
-            temp += raw_flight_table_infos[4].get_text() + "," \
+            temp += "','"
+            temp += raw_flight_table_infos[4].get_text() + "','" \
                 + raw_flight_table_infos[8].get_text()
-            flight_info['flight'+str(count)] = temp	#放入dict
+            flight_info['flight'+str(count)] = "['" + temp + "']"	#放入dict
             count += 1
             if count == 100:                            #收集 100 筆 flight_info
                 break
-    flight_info_jason = json.dumps(flight_info, ensure_ascii=False, separators=(',', ': '))
+    flight_info_jason = json.dumps(flight_info, ensure_ascii=False, separators=(',\n', ' : '))
     print(flight_info_jason)				#印出所有航班資訊(非必要)
     with open('fi_out.json', 'w') as file:
         file.write(flight_info_jason)                   #輸出航班資訊的json
